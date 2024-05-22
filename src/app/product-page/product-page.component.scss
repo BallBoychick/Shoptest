@@ -1,0 +1,28 @@
+.product {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.product-image {
+    width: 20rem;
+}
+
+.product {
+    .header {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    h2 {
+        margin-bottom: .5rem;
+    }
+}
+
+.flex {
+    display: flex;
+}
+
+.item {
+    width: 50%;
+}

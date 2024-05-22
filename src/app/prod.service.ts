@@ -77,4 +77,15 @@ getAll(): Observable<any[]> {
       })
     );
   }
+
+  async getPhoneById(id: string) {
+    
+    const db = getFirestore();
+    const docRef = doc(db, 'Androids', id);
+    // console.log("SADASDS")
+    const docSnap = await getDoc(docRef);
+    // console.log(docSnap);
+    const data = JSON.parse(JSON.stringify(docSnap.data()));
+    return data
+}
 }

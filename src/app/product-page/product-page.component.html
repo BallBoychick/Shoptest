@@ -1,1 +1,37 @@
-<p>product-page works!</p>
+<div *ngIf="product$ as product">
+
+<div class="product">
+    <div class="header right">
+        <button routerLink="/" class="btn btn-dark">Back</button>
+    </div>
+
+    <div class="flex">
+        <div class="item text-center">
+            <h2>{{product.name}}</h2>
+
+            <!-- <div class="flex-center">
+                <quill-view-html [content]="product.photo"></quill-view-html>
+            </div> -->
+            <img src="{{product.img}}" class="product-image" alt="">
+            <div>
+                <h2>Price: {{product.price}} $</h2>
+
+                <button class="btn btn-dark" [routerLink]="['/cart']">Add to cart</button>
+            </div>
+        </div>
+
+        <div class="item">
+            <h2>Information:</h2>
+
+            <div>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+            Officia inventore iusto reprehenderit omnis neque iste nam 
+            consectetur delectus cum consequatur. Temporibus sit 
+            magni molestiae et sunt eaque aut maxime reiciendis.
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</div>
