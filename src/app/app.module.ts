@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Firestore, FirestoreModule, collectionData, provideFirestore} from '@angular/fire/firestore';
 import {FirebaseApp} from '@angular/fire/compat';
-
+import { HttpClientModule } from '@angular/common/http';
 import { initializeApp } from "firebase/app";
 import { FirebaseAppModule, provideFirebaseApp } from '@angular/fire/app';
 import { getFirestore } from 'firebase/firestore';
@@ -13,6 +13,7 @@ import { MainLayoutComponent } from './shared/main-layout/main-layout.component'
 import { MainPageComponent } from './main-page/main-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { ProductPageComponent } from './product-page/product-page.component';
+import { ProductService } from './prod.service';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -40,10 +41,11 @@ const firebaseConfig = {
     ProductPageComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [FirebaseAppModule, {provide: ProductService} ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
