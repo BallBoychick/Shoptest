@@ -12,7 +12,8 @@ export class LoginPageComponent {
   constructor(private router: Router) {}
   form = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    email: new FormControl('', [Validators.required, Validators.email])
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required, Validators.minLength(5)])
   });
   loginObj: LoginModel = new LoginModel();
 
@@ -25,7 +26,8 @@ export class LoginPageComponent {
     if (localUser != null) {
       const users = JSON.parse(localUser);
 
-      const isUserPresent = users.find((user:SignUpModel) => user.email == this.form.value.email && user.name == this.form.value.name)
+      const isUserPresent = users.find((user:SignUpModel) => user.email == this.form.value.email 
+      && user.name == this.form.value.name && user.password == this.form.value.password)
 
       if(isUserPresent !=undefined) {
         localStorage.setItem('loggedUser', JSON.stringify(isUserPresent));
@@ -40,9 +42,11 @@ export class LoginPageComponent {
 export class LoginModel {
   name: string;
   email: string;
+  password: string;
 
   constructor() {
     this.name = "";
     this.email = "";
+    this.password = "";
   }
 }

@@ -12,6 +12,7 @@ export class RegisterPageComponent {
   form = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(3)]),
     email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required, Validators.minLength(5)]),
   });
 
   signUpobj: SignUpModel = new SignUpModel();
@@ -40,9 +41,11 @@ export class RegisterPageComponent {
 export class SignUpModel {
   name: string;
   email: string;
+  password: string;
 
   constructor() {
     this.name = "";
     this.email = "";
+    this.password = "";
   }
 }
