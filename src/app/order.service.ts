@@ -39,7 +39,8 @@ export class OrderService {
       const docRef = await addDoc(collection(db, 'Orders'), {
         name: order.name,
         last: "sus",
-        price: order.price
+        price: order.price,
+        order: order.orders
       });
       console.log("Document written with ID: ", docRef.id);
     } catch (e) {
