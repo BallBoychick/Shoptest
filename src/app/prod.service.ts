@@ -5,6 +5,7 @@ import {getFirestore, doc, getDoc, collection, getDocs} from "firebase/firestore
 import { Observable, from, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { MainPageComponent } from './main-page/main-page.component';
+import { Prod } from './prod';
 NgModule({
   exports: [ ],
   imports: [ MainPageComponent],
@@ -29,6 +30,7 @@ const app = initializeApp(firebaseConfig);
 export class ProductService {
   post: any = [];
   products: any;
+  cartProducts : Prod [] = []
   phones: any = [];
   constructor(
     private http: HttpClient) { }
@@ -58,6 +60,10 @@ export class ProductService {
 
 //       return this.phones;
 //   }
+
+addProduct (product: Prod) {
+    this.cartProducts.push(product)
+  }
 
 getAll(): Observable<any[]> {
     const db = getFirestore();

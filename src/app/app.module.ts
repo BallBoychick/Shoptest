@@ -15,6 +15,7 @@ import { CartPageComponent } from './cart-page/cart-page.component';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { ProductService } from './prod.service';
 import { ProductComponent } from './product/product.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -45,7 +46,9 @@ const firebaseConfig = {
   imports: [
     HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [FirebaseAppModule, {provide: ProductService} ],
   bootstrap: [AppComponent]

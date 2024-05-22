@@ -23,4 +23,9 @@ export class ProductPageComponent {
       this.product$ = product;
     });
   }
+
+  addProduct(product: any) {
+    this.productServ.addProduct(product)
+
+  }
 }
