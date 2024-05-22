@@ -3,7 +3,10 @@
 
     <ul>
         <li routerLinkActive="active">
-            <a href="#">Phone</a>
+            {{loggedUser?.name}}
+        </li>
+        <li routerLinkActive="active">
+            <a href="/main">Phone</a>
         </li>
         <li routerLinkActive="active">
             <a href="#">Tablet</a>
@@ -13,6 +16,9 @@
         </li>
         <li routerLinkActive="active">
             <a [routerLink]="['/cart']">Cart</a>
+        </li>
+        <li routerLinkActive="active">
+            <button type="button" (click)="onLogoff()">LogOut</button>
         </li>
     </ul>
 </nav>

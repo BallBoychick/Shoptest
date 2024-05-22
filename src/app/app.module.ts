@@ -16,6 +16,8 @@ import { ProductPageComponent } from './product-page/product-page.component';
 import { ProductService } from './prod.service';
 import { ProductComponent } from './product/product.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RegisterPageComponent } from './register-page/register-page.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -41,7 +43,9 @@ const firebaseConfig = {
     MainPageComponent,
     CartPageComponent,
     ProductPageComponent,
-    ProductComponent
+    ProductComponent,
+    RegisterPageComponent,
+    LoginPageComponent
   ],
   imports: [
     HttpClientModule,
