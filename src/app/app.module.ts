@@ -14,6 +14,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { ProductService } from './prod.service';
+import { ProductComponent } from './product/product.component';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -38,7 +39,8 @@ const firebaseConfig = {
     MainLayoutComponent,
     MainPageComponent,
     CartPageComponent,
-    ProductPageComponent
+    ProductPageComponent,
+    ProductComponent
   ],
   imports: [
     HttpClientModule,

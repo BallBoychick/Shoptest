@@ -1,0 +1,23 @@
+<!-- <div class="text-center">
+    <h2>{{ product.name}}</h2>
+
+    <div class="flex-center">
+        
+    </div>
+
+    <h2>Price: {{product.price}} $</h2>
+
+    <button [routerLink]="['/product', product.id]" class="btn btn-dark">Open</button>
+
+    <button [routerLink]="['/cart']" class="btn btn-dark">Add to cart</button>
+</div> -->
+
+<!-- <img src="{{product.img}}" class="product-image" alt=""> -->
+
+<div class="product">
+    <h2>{{ product.name}}</h2>
+    <img src="{{product.img}}" class="product-image" alt="">
+    <h2>Price: {{ product.price}} $</h2>
+    <button [routerLink]="['/product', product.id]" class="btn btn-dark">Open</button>
+    <button [routerLink]="['/cart']" class="btn btn-dark">Add to cart</button>
+</div>

@@ -1,6 +1,5 @@
 <p>main-page works!</p>
 <div *ngIf="products$ | async as products" class="main-product">
-    <div *ngFor="let product of $any(products)">
-    {{product.name}}
-    </div>
+    <app-product *ngFor="let product of $any(products)" [product]="product">
+    </app-product>
 </div>
